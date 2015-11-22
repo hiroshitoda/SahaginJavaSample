@@ -25,7 +25,33 @@ public class SampleTest
     }
 
     @Test
-    public void test() throws Exception
+    public void test1() throws Exception
+    {
+        driver.get("http://example.selenium.jp/reserveApp_Renewal/");
+        new Select(driver.findElement(By.id("reserve_term"))).selectByVisibleText("7");
+        new Select(driver.findElement(By.id("headcount"))).selectByVisibleText("5");
+        driver.findElement(By.id("breakfast_off")).click();
+        driver.findElement(By.id("agree_and_goto_next")).click();
+        driver.findElement(By.id("returnto_index")).click();
+        // 次のテストは必ず失敗する。
+        assertThat("人数が期待値と異なる", driver.findElement(By.id("headcount")).getAttribute("value"), is("4"));
+    }
+
+    @Test
+    public void test2() throws Exception
+    {
+        driver.get("http://example.selenium.jp/reserveApp_Renewal/");
+        new Select(driver.findElement(By.id("reserve_term"))).selectByVisibleText("7");
+        new Select(driver.findElement(By.id("headcount"))).selectByVisibleText("5");
+        driver.findElement(By.id("breakfast_off")).click();
+        driver.findElement(By.id("agree_and_goto_next")).click();
+        driver.findElement(By.id("returnto_index")).click();
+        // 次のテストは必ず失敗する。
+        assertThat("人数が期待値と異なる", driver.findElement(By.id("headcount")).getAttribute("value"), is("4"));
+    }
+
+    @Test
+    public void test3() throws Exception
     {
         driver.get("http://example.selenium.jp/reserveApp_Renewal/");
         new Select(driver.findElement(By.id("reserve_term"))).selectByVisibleText("7");
