@@ -1,0 +1,8 @@
+# Sahagin configuration file written by YAML style.
+
+java:
+  # Root directory of test Java files
+  # (absolute path or relative path from this YAML file).
+  # All test methods and methods annotated by @TestDoc 
+  # must be located under this directory.
+  testDir: src/test/java
